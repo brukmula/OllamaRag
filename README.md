@@ -18,13 +18,13 @@ Our Team recommends Llama 3-8b. Smaller language models will return less accurat
 1. Clone the repository
 
 ```
-git clone https://github.com/user-name/project
+https://github.com/brukmula/OllamaRag
 ```
 
 2. Navigate to the project directory
 
 ```
-cd the_project
+cd OllamaRag
 ```
 
 3. Install the Dependencies
