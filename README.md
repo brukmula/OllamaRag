@@ -56,14 +56,16 @@ Once you confirm that the server is running, run the Python Flask App.
 python app.py
 ```
 
+Once this is complete, the app will open the project at this address: http://127.0.0.1:5000
+
 ## Features
 
 - All run locally
-  - Ollama runs yours LLM on your own device, so no need to create any accounts.
+  - Ollama runs your LLMs on your own device, so no need to create any accounts.
 - Multiple LLM Support
-  - Since this program is run using Ollama, all Ollama supported LLM is compatible with this program.
+  - Since this program is run using Ollama, all Ollama supported LLMs are compatible with this program.
 - Document Handling
-  - PDF, txt, and MD files are all supported with this program.
+  - PDF, txt, and MD files are all supported.
 
 ## Credit 
 
