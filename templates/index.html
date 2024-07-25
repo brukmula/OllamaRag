@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Interface</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script>
+    // Code for spinner
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const button = document.querySelector('button');
+        const spinner = document.createElement('div');
+        spinner.classList.add('loader', 'hidden');
+        button.parentNode.insertBefore(spinner, button);
+
+        form.onsubmit = function() {
+            spinner.classList.remove('hidden');
+            button.textContent = 'Loading...';
+            button.disabled = true;
+        };
+    });
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Local LLM RAG</h1>
+        <form action="/query" method="post">
+            <label for="model">Model: </label>
+            <select name="model" id="model">
+                <option value="llama3">Llama 3</option>
+                <option value="mistral">Mistral</option>
+                <option value="phi3">Phi 3</option>
+            </select>
+            <input type="text" name="query" placeholder="Enter your query here">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <h1>Query: {{ query }}</h1>
+    <h2>Answered by: {{ model_name }}</h2>
+    <p>Response: {{ response }}</p>
+    <h2>Sources</h2>
+    <ul>
+        {% for source in sources %}
+        <li>{{ source }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Ask another query</a>
+    <a id="promptButton">Show Prompt</a>
+    <p id="prompt" style="display:none">Prompt Text: <br> {{ prompt_text }}</p>
+</body>
+<script>
+    const button = document.getElementById('promptButton');
+    const promptText = document.getElementById('prompt');
+
+    button.addEventListener('click', () => {
+        if (promptText.style.display === 'none') {
+            promptText.style.display = 'block'; // Make the prompt visible
+            button.innerText = 'Hide Prompt';
+            beautifyText('prompt'); // Call beautifyText when showing the prompt
+        } else {
+            promptText.style.display = 'none'; // Hide the prompt
+            button.innerText = 'Show Prompt';
+        }
+    });
+
+    function beautifyText(elementId) {
+        const element = document.getElementById(elementId);
+        const originalText = element.innerText;
+        const newText = originalText.replace(/--/g, '<br><br>'); // Replace '--' with new line in HTML
+        element.innerHTML = newText; // Update the innerHTML to reflect new formatting
+    }
+</script>
+</html>
