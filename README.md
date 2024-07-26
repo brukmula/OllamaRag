@@ -1,4 +1,4 @@
-# Ollama Rag Web App
+# Ollama RAG Web App
 
 Use any Ollama compatible LLM to interact with your documents.
 
